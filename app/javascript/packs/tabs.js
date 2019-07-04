@@ -1,11 +1,28 @@
-$(document).on('turbolinks:load', function () {
-    $('.tabs-header [data-tab-toggle]').on('click', function (e) {
-        $(this).closest('.tabs-header').find('a.active').removeClass('active');
-        $(this).addClass('active');
-        console.log( $(this).closest('.tabs'));
-        console.log( $(this).closest('.tabs').find('.tabs-panel.active'));
-        $(this).closest('.tabs').find('.tabs-panel.active').removeClass('active');
-        $($(this).data('tab-toggle')).addClass('active');
-        e.preventDefault();
-    });
-});
+class Tabs{
+    constructor(){
+        this.tabs = document.querySelectorAll('.tabs-header [data-tab-toggle')
+    }
+
+    tabsAvailable(){
+        return this.tabs.length > 0
+    }
+
+    start(){
+        this.tabs.forEach(function(tab){
+            tab.addEventListener('click', function(e){
+                e.preventDefault()
+                tab.closest('.tabs-header').querySelector('a.active').classList.remove('active')
+                tab.classList.add('active')
+                tab.closest('.tabs').querySelector('.tabs-panel.active').classList.remove('active')
+                document.querySelector(tab.dataset.tabToggle).classList.add('active')
+            })
+        })
+    }
+}
+
+document.addEventListener('turbolinks:load', function(){
+    let tabs = new Tabs()
+    if(tabs.tabsAvailable()){
+        tabs.start()
+    }
+})

@@ -18,10 +18,11 @@ nav {
   }
 }
 
-.dropdown-menu {
+ul.dropdown-menu {
   display: none;
   background-color: white;
   list-style: none;
+  padding:0;
   &.active {
     display: block;
     position: absolute;

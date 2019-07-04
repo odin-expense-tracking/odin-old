@@ -5,7 +5,11 @@ class ApplicationController < ActionController::Base
   before_action :masquerade_user!
   around_action :set_time_zone, if: :current_user
 
-  layout 'admin/application', if: :devise_admin?
+  if ((is_a? ::DeviseController) && current_user.admin?)
+    layout 'admin/application'
+  else
+    layout 'application'
+  end
 
   protected
   def configure_permitted_parameters
@@ -15,10 +19,6 @@ class ApplicationController < ActionController::Base
 
   def set_time_zone(&block)
     Time.use_zone((current_user.timezone||"Central Time (US & Canada)"), &block)
-  end
-
-  def devise_admin?
-    :devise_controller? && current_user.admin?
   end
 
 end

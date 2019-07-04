@@ -1,24 +1,31 @@
-# README
+# Oding: Expense Tracking
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Describe the whole project in a few sentences to a few paragraphs, just as you
+would explain it to your fellow developer. What is it actually, what was it
+built for, who is using it, etc
 
-Things you may want to cover:
 
-* Ruby version
+## Architecture and models
 
-* System dependencies
+Give a quick overview of the few core models and how they interact. Do not go
+into detail – class documentation should be written atop the class file. Just
+impart the very basics to grasp the application model, so a new developer knows
+where to dive in.
 
-* Configuration
 
-* Database creation
+## Development
 
-* Database initialization
+Describe how to get started with the project. Document employed 3rd party
+services and how to use them, how to start a development server – just about
+anything that a new developer needs to know.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Peculiarity X
 
-* Deployment instructions
+Add a section for each special concept in the application, e.g. a CDN and what
+it is used for, that icons are rendered from a custom icon font and how to update
+it, that all posts are created from an importer, that there's a web UI *and* a
+JSON API *and* an embeddable component.
 
-* ...
+Make the reader aware of a peculiarity, but remember to keep it short. Details
+should be documented in the respective area.

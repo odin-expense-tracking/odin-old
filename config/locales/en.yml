@@ -30,4 +30,15 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  home:
+    title: Revolutionize Your Hospitality Property's Accounting
+    subtitle: We specialize in revenue, expenses, and analytical reporting.
+    features:
+      maximum_security:
+        title: Maximum Security
+        description:
+          Our application offers enhanced security measures so that your hotel data is kept safe and secure. The data is encrypted so that no one other than you can view or edit your hotel data.
+      informative_analytics:
+        title: Informative Analytics
+        description:
+          Powerful analytics can be performed on your hotel data. Using this unique solution will allow you to view changes in revenue or ADR as trends occur in your market. Further optimization can be done to limit your expenses and offer guidance for future hospitality performance.

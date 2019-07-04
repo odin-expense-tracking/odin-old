@@ -24,10 +24,7 @@
         </div>
         <div class="card-body">
           <div class="card-table-search">
-            <%= text_field_tag :search, nil, placeholder: :Search %>
-            <%= link_to '#', class: 'close-search' do %>
-              &times;
-            <% end %>
+            <%= search_field_tag :search, nil, placeholder: :Search %>
           </div>
           <table>
             <thead>

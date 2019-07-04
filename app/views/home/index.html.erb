@@ -1,11 +1,14 @@
 <%= content_for :title, 'Home' %>
-<%= render partial:'shared/secondary', locals:{ link_active: 'About' } %>
-<%= content_for :body_classes, 'secondary-nav-content' %>
-
+<div class="header" style="background-image: url(<%=image_url('header') %>)">
+  <div class="header-caption text-center">
+    <h1><%= t('home.title') %></h1>
+    <p><%= t('home.subtitle') %></p>
+  </div>
+</div>
 <div class="content">
   <div class="container">
     <section class="text-center">
-      <h2>Kickstart</h2>
+      <h2><%= Rails.configuration.application_name %>: Expense Tracking</h2>
       <p>
         Kickstart is a rails template library that includes custom css library, javascript/coffeescript and HTML
         templates/scaffolds. Provides a mobile responsive layout with all the modern essential components such as
@@ -14,29 +17,12 @@
         concepts are explained along with the components.
       </p>
       <div class="row">
-        <div class="col-md-4 col-sm-12">
-          <h3>Templates</h3>
-          <p>
-            Designing a product or website is quite a time intensive endeavour. It is often a great help to start with a
-            basic template and go forward with the rest. Please explore the templates shared and chose your favorite.
-          </p>
-        </div>
-        <div class="col-md-4 col-sm-12">
-          <h3>Components</h3>
-          <p>
-            Components are at the core of a consistent experience on any website or product. Kickstart attempts to
-            design the standard components with simplicity and modern expectations in mind. Check out the components to
-            build your own custom layout.
-          </p>
-        </div>
-        <div class="col-md-4 col-sm-12">
-          <h3>Styles</h3>
-          <p>
-            TO BE UPDATED
-            Divide details about your product or agency work into parts. Write a few lines about each one.
-            A paragraph describing a feature will be enough.
-          </p>
-        </div>
+        <% t('home.features').each do |feature, contents| %>
+          <div class="col-md-4 col-sm-12">
+            <h3><%= contents[:title] %></h3>
+            <p><%= contents[:description] %></p>
+          </div>
+        <% end %>
       </div>
       <p>
         Get started today by creating your new rails app with Kickstart here!

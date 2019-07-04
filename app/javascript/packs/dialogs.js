@@ -34,7 +34,7 @@ class Dialog{
         }.bind(this))
     }
 }
-$(document).on('turbolinks:load', function () {
+document.addEventListener('turbolinks:load', function(){
     let dialogs = new Dialog()
     if (dialogs.dialogAvailable()){
         dialogs.start()

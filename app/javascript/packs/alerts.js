@@ -25,7 +25,7 @@ class Alert{
         }.bind(this))
     }
 }
-$(document).on('turbolinks:load', function () {
+document.addEventListener('turbolinks:load', function(){
     let alerts = new Alert()
     if (alerts.alertsAvailable()){
         alerts.start()

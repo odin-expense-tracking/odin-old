@@ -34,10 +34,7 @@
             <div class="tabs-panels">
               <div class="tabs-panel active" id="text_guides">
                 <div class="card-table-search">
-                  <%= text_field_tag :search, nil, placeholder: :Search %>
-                  <%= link_to '#',class:'close-search' do %>
-                    &times;
-                  <% end %>
+                  <%= search_field_tag :search, nil, placeholder: :Search %>
                 </div>
                 <table>
                   <thead>
@@ -79,10 +76,7 @@
               </div>
               <div class="tabs-panel" id="video_guides">
                 <div class="card-table-search">
-                  <%= text_field_tag :search, nil, placeholder: :Search %>
-                  <%= link_to '#',class:'close-search' do %>
-                    &times;
-                  <% end %>
+                  <%= search_field_tag :search, nil, placeholder: :Search %>
                 </div>
                 <table>
                   <thead>

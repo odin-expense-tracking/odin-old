@@ -1,0 +1,8 @@
+<% flash.each do |msg_type, message| %>
+  <div class="alert <%= bootstrap_class_for(msg_type) %>" is="test">
+    <div class="container">
+      <a class="float-right close" href="#"><span aria-hidden="true">&times;</span></a>
+      <%= message %>
+    </div>
+  </div>
+<% end %>

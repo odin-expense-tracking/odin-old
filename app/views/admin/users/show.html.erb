@@ -1,0 +1,36 @@
+<div class="content">
+  <div class="row">
+    <div class="col-md-8 col-sm-12 mx-auto">
+      <div class="card card-bordered card-shadow">
+        <div class="card-header">
+          <div class="card-menu">
+            <%= link_to 'Back', admin_users_path, class:'btn btn-secondary-outline' %>
+          </div>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title text-center">User: <%= @user.name %></h2>
+          <div>
+            <table>
+              <tr>
+                <td><strong>Name</strong></td>
+                <td><%= @user.name %></td>
+              </tr>
+              <tr>
+                <td><strong>Email</strong></td>
+                <td><%= @user.email %></td>
+              </tr>
+              <tr>
+                <td><strong>Timezone</strong></td>
+                <td><%= @user.name %></td>
+              </tr>
+              <tr>
+                <td><strong>Access Level</strong></td>
+                <td><%= @user.admin ? 'Administrator' : 'User' %></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

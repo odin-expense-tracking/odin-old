@@ -29,7 +29,7 @@
       <h2><%= t('home.how_it_works.title') %></h2>
       <p><%= t('home.how_it_works.description') %><br/>
       </p>
-      <% t('home.steps').each_slice(4) do |step| %>
+      <% t('home.how_it_works.steps').each_slice(4) do |step| %>
         <div class="row m-0">
           <% step.each do |title, contents| %>
             <div class="col-sm-12 col-md-3">
@@ -43,6 +43,26 @@
           <% end %>
         </div>
       <% end %>
+    </section>
+    <section class="pricing text-center">
+      <h2><%= t('home.pricing.title') %></h2>
+      <p><%= t('home.pricing.description') %><br/>
+      </p>
+        <div class="row m-0">
+          <% t('home.pricing.tiers').each do |tier, contents| %>
+            <div class="col-sm-12 col-md-3">
+              <div class="card card-shadow">
+                <div class="card-title"><%= contents[:title] %></div>
+                <div class="card-body">
+                  <h3><%= contents[:amount] %> / mo</h3>
+                  <% contents[:description].each do |item|%>
+                  <p><%= item %></p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
     </section>
   </div>
 </div>

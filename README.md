@@ -34,6 +34,10 @@ Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.co
 bundle && yarn
 ```
 
+Ensure the following:
+- Keep PostgreSQL server running
+- Make sure to keep redis server running in the background as well
+
 ### Initialize the database
 The source code comes with sample database configuration files. 
 You will need to copy the config:

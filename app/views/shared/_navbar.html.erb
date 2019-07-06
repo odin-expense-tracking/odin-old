@@ -11,10 +11,13 @@
     <button class="mobile-toggle">Menu</button>
     <ul>
       <li>
+        <%= link_to "Pricing", pricing_path %>
+      </li>
+       <li>
         <%= link_to "What's New", announcements_path, class: unread_announcements(current_user) %>
       </li>
       <li>
-        <%= link_to "Learn", guides_videos_path %>
+        <%= link_to "Learn", guides_texts_path %>
       </li>
       <% if current_user.present? %>
         <li>

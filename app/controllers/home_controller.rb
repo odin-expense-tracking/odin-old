@@ -9,7 +9,9 @@ class HomeController < ApplicationController
   end
 
   def get_started
+  end
 
+  def pricing
   end
 
   def components

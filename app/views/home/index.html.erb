@@ -3,19 +3,14 @@
   <div class="header-caption text-center">
     <h1><%= t('home.title') %></h1>
     <p><%= t('home.subtitle') %></p>
+    <p><%= link_to 'Get Started Today', new_user_registration_path, class: 'btn btn-secondary-outline' %></p>
   </div>
 </div>
 <div class="content">
   <div class="container">
     <section class="text-center">
-      <h2><%= Rails.configuration.application_name %>: Expense Tracking</h2>
-      <p>
-        Kickstart is a rails template library that includes custom css library, javascript/coffeescript and HTML
-        templates/scaffolds. Provides a mobile responsive layout with all the modern essential components such as
-        buttons, card, checkboxes, dropdowns, modals, etc. A number of components are strictly designed to follow modern
-        user expectations and engagement, so it might require custom work depending on your needs. Some of the design
-        concepts are explained along with the components.
-      </p>
+      <h2><%= Rails.configuration.application_name %></h2>
+      <p><%= t('home.description') %></p>
       <div class="row">
         <% t('home.features').each do |feature, contents| %>
           <div class="col-md-4 col-sm-12">
@@ -24,60 +19,10 @@
           </div>
         <% end %>
       </div>
-      <p>
-        Get started today by creating your new rails app with Kickstart here!
-      </p>
+      <p><strong>Get started today with a free 30 day trial of Odin!</strong></p>
       <p>
         <%= link_to 'Get Started Today', new_user_registration_path, class: 'btn btn-primary-outline' %>
       </p>
-    </section>
-    <section class="review text-center">
-      <h2>Our Users Love Us</h2>
-      <p>
-        You need more information? Check what other persons are saying about our product.
-        <br/>
-      </p>
-      <div class="row m-0">
-        <div class="col-sm-12 col-md-4">
-          <div class="card card-shadow text-left">
-            <div class="card-body">
-              <p>
-                Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love
-                the color mixtures, cards... everything. Keep up the great work!
-              </p>
-              <p class="text-right">
-                &mdash; Author name
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-4">
-          <div class="card card-shadow text-left">
-            <div class="card-body">
-              <p>
-                Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love
-                the color mixtures, cards... everything. Keep up the great work!
-              </p>
-              <p class="text-right">
-                &mdash; Author name
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-4">
-          <div class="card card-shadow text-left">
-            <div class="card-body">
-              <p>
-                Your products, all the kits that I have downloaded from your site and worked with are sooo cool! I love
-                the color mixtures, cards... everything. Keep up the great work!
-              </p>
-              <p class="text-right">
-                &mdash; Author name
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   </div>
 </div>

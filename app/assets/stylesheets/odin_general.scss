@@ -1,4 +1,9 @@
+@import "functions";
 .header{
+  height: 60vw;
+  @include respond-to('md') {
+    height: 40vw;
+  }
   .header-caption{
     background-color: white;
     opacity: 0.8;

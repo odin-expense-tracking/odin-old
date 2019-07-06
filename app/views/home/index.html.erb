@@ -3,12 +3,13 @@
   <div class="header-caption text-center">
     <h1><%= t('home.title') %></h1>
     <p><%= t('home.subtitle') %></p>
+    <p><%= link_to 'Get Started Today', new_user_registration_path, class: 'btn btn-secondary-outline' %></p>
   </div>
 </div>
 <div class="content">
   <div class="container">
     <section class="text-center">
-      <h2><%= Rails.configuration.application_name %>: Expense Tracking</h2>
+      <h2><%= Rails.configuration.application_name %></h2>
       <p><%= t('home.description') %></p>
       <div class="row">
         <% t('home.features').each do |feature, contents| %>
@@ -18,51 +19,10 @@
           </div>
         <% end %>
       </div>
-      <p>
-        Get started today by creating your new rails app with Kickstart here!
-      </p>
+      <p><strong>Get started today with a free 30 day trial of Odin!</strong></p>
       <p>
         <%= link_to 'Get Started Today', new_user_registration_path, class: 'btn btn-primary-outline' %>
       </p>
-    </section>
-    <section class="review text-center">
-      <h2><%= t('home.how_it_works.title') %></h2>
-      <p><%= t('home.how_it_works.description') %><br/>
-      </p>
-      <% t('home.how_it_works.steps').each_slice(4) do |step| %>
-        <div class="row m-0">
-          <% step.each do |title, contents| %>
-            <div class="col-sm-12 col-md-3">
-              <div class="card card-shadow">
-                <div class="card-title"><%= contents[:title] %></div>
-                <div class="card-body">
-                  <p><%= contents[:description] %></p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </section>
-    <section class="pricing text-center">
-      <h2><%= t('home.pricing.title') %></h2>
-      <p><%= t('home.pricing.description') %><br/>
-      </p>
-        <div class="row m-0">
-          <% t('home.pricing.tiers').each do |tier, contents| %>
-            <div class="col-sm-12 col-md-3">
-              <div class="card card-shadow">
-                <div class="card-title"><%= contents[:title] %></div>
-                <div class="card-body">
-                  <h3><%= contents[:amount] %> / mo</h3>
-                  <% contents[:description].each do |item|%>
-                  <p><%= item %></p>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
     </section>
   </div>
 </div>

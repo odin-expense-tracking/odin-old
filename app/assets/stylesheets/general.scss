@@ -181,11 +181,11 @@ nav {
 }
 
 main {
-  margin-top: $navbar-height;
-  min-height: 75vh;
+  margin-top: $navbar-height - 30px;
+  min-height: 85vh;
   @include respond-to('md') {
-    margin-top: $navbar-height - 20px;
-  }
+     margin-top: $navbar-height - 20px;
+   }
 
   &.secondary-nav-content {
     margin-top: $navbar-secondary-height - 50;

@@ -53,9 +53,9 @@ en:
           Our system is built to organize your property's bookkeeping. A simple system ensures that you always know how well your property is performing.
       steps:
         step_1:
-          title: 1. Enter Property's Historical Revenue and Expenses
+          title: 1. Historical Revenue
           description:
-            View historical trends and expenses. Use this information to predict future profitability.
+            Enter property's historical revenue and expenses, view historical trends and expenses. Use this information to predict future profitability.
         step_2:
           title: 2. Calculate Profitability Daily
           description:
@@ -72,36 +72,13 @@ en:
           title: Coming Soon!
           description:
             Powerful predictions and analysis made on historical data to calculate optimal rate to maximize occupancy and revenue while reducing expenses.
-    pricing:
-      title: Pricing
-      description:
-        We pride ourselves in our fair pricing models that are adaptable to all business. Contact us if you have any additional questions about each plan.
-      tiers:
-        tier_1:
-          title: Free Trial
-          amount: $0
-          description:
-            - 30 day free trial
-            - Unlimited data storage
-            - Email support
-            - Documentation access
-        tier_2:
-          title: Pro
-          amount: $75
-          description:
-            - Employee user included
-            - Unlimited data storage
-            - Priority email support
-            - Documentation access
-            - Nightly Backups
-            - Data Export
-        tier_3:
-          title: Enterprise
-          amount: Variable
-          description:
-            - Employee user included
-            - Unlimited data storage
-            - Phone and email support
-            - Documentation access
-            - Nightly Backups
-            - Data Export
+  pricing:
+    title: Pricing
+    description_html:
+      <h2>Odin is $50 per month, all-inclusive.</h2>
+      <p>We pride ourselves in our fair pricing models that are adaptable to all business. Contact us if you have any additional questions about each plan.</p>
+      <p>No matter how many properties you own, or the team members you have. <strong>$50 per month</strong> is all you'll pay.<p>
+      <p><strong>For $50 per month, you get:</strong></p>
+      <p>Unlimited Users</p>
+      <p>Unlimited Properties</p>
+      <p>All the features</p>

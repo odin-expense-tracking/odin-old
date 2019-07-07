@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_04_000645) do
+ActiveRecord::Schema.define(version: 2019_07_07_145011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,46 @@ ActiveRecord::Schema.define(version: 2019_07_04_000645) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "properties_addresses", force: :cascade do |t|
+    t.string "street_1", null: false
+    t.string "street_2"
+    t.string "city", null: false
+    t.string "state", null: false
+    t.string "zipcode", null: false
+    t.string "country", default: "US", null: false
+    t.integer "addressable_id", null: false
+    t.string "addressable_class", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "properties_hotels", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "phone", limit: 20
+    t.string "email", limit: 70
+    t.integer "rooms", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "properties_hotels_daily_stats", force: :cascade do |t|
+    t.bigint "properties_hotel_id", null: false
+    t.date "date"
+    t.decimal "occupancy", default: "0.0"
+    t.integer "rooms_occupied", default: 0
+    t.decimal "credit_sales", default: "0.0"
+    t.decimal "cash_sales", default: "0.0"
+    t.decimal "avg_daily_rate", default: "0.0"
+    t.decimal "revenue", default: "0.0"
+    t.decimal "revenue_par", default: "0.0"
+    t.decimal "gross", default: "0.0"
+    t.decimal "total_expenses", default: "0.0"
+    t.decimal "profit", default: "0.0"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["properties_hotel_id"], name: "index_properties_hotels_daily_stats_on_properties_hotel_id"
+  end
+
   create_table "services", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "provider"
@@ -136,5 +176,6 @@ ActiveRecord::Schema.define(version: 2019_07_04_000645) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "properties_hotels_daily_stats", "properties_hotels"
   add_foreign_key "services", "users"
 end

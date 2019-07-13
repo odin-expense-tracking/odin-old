@@ -1,0 +1,58 @@
+<%= content_for :title, 'Home' %>
+
+<div class="content">
+
+  <td><%= link_to "View Hotel", properties_hotel_path(@hotel), :class  => "btn btn-secondary"%></td>
+
+
+  <div class="container">
+    <h3>Edit property.</h3>
+
+    <%= form_for @hotel, method: :patch do |f| %>
+      <p>
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :email %><br />
+        <%= f.email_field :email %>
+      </p>
+      <p>
+        <%= f.label :phone %><br />
+        <%= f.phone_field :phone %>
+      </p>
+      <p>
+        <%= f.label :rooms %><br />
+        <%= f.number_field :rooms %>
+      </p>
+      <%= f.fields_for :properties_address do |a| %>
+        <p>
+          <%= a.label :street_1 %><br />
+          <%= a.text_field :street_1 %>
+        </p>
+        <p>
+          <%= a.label :street_2 %><br />
+          <%= a.text_field :street_2 %>
+        </p>
+        <p>
+          <%= a.label :city %><br />
+          <%= a.text_field :city %>
+        </p>
+        <p>
+          <%= a.label :state %><br />
+          <%= a.text_field :state %>
+        </p>
+        <p>
+          <%= a.label :zipcode %><br />
+          <%= a.text_field :zipcode %>
+        </p>
+        <p>
+          <%= a.label :country %><br />
+          <%= a.text_field :country %>
+        </p>
+      <% end %>
+      <p><%= f.submit "Submit" %></p>
+    <% end %>
+
+  </div>
+</div>

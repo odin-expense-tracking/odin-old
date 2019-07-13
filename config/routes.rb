@@ -1,6 +1,10 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  namespace :properties do
+    get 'hotels/index'
+    get 'hotels/new'
+  end
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'
   get '/pricing', to: 'home#pricing'
@@ -35,6 +39,10 @@ Rails.application.routes.draw do
     authenticated :user do
       # Add your authenticated route alternates here
       # root to: 'controller#action', as: 'logged_in_root'
+      namespace :properties do
+
+        resources :hotels
+      end
     end
 
 

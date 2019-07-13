@@ -7,8 +7,7 @@ class CreatePropertiesAddresses < ActiveRecord::Migration[6.0]
       t.string :state,                null: false
       t.string :zipcode,              null: false
       t.string :country,              null: false, default: 'US'
-      t.integer :addressable_id,      null: false
-      t.string :addressable_class,    null: false
+      t.references :hotel, null: false
 
       t.timestamps
     end

@@ -1,0 +1,92 @@
+
+<div class="content">
+  <div class="container-fluid">
+
+
+    <%= link_to "VIEW ALL PROPERTIES", properties_hotels_path, :class => "btn btn-primary" %>
+
+    <div class="hotel-details container-fluid">
+
+      <div class="row">
+        <h2>Hotel Details:</h2>
+      </div>
+      <div class="row">
+
+        <div class="col">
+          <p><b>Name</b></p>
+          <p><%= @hotel.name %></p>
+        </div>
+        <div class="col">
+          <p><b>Email</b></p>
+          <p><%= @hotel.email %></p>
+        </div>
+        <div class="col">
+          <p><b>Phone</b></p>
+          <p><%= @hotel.phone %></p>
+        </div>
+        <div class="col">
+          <p><b>Room Count</b></p>
+          <p><%= @hotel.rooms %></p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <hr>
+
+
+    <div class="hotel-address container-fluid">
+
+      <div class="row">
+        <h2>Hotel Address:</h2>
+      </div>
+      <div class="row">
+
+        <div class="col">
+          <p><b>Street 1</b></p>
+          <p><%= @hotel.properties_address.street_1 %></p>
+        </div>
+        <div class="col">
+          <p><b>Street 2</b></p>
+          <p><%= @hotel.properties_address.street_2 %></p>
+        </div>
+        <div class="col">
+          <p><b>City</b></p>
+          <p><%= @hotel.properties_address.city %></p>
+        </div>
+        <div class="col">
+          <p><b>Zip Code</b></p>
+          <p><%= @hotel.properties_address.zipcode %></p>
+        </div>
+        <div class="col">
+          <p><b>State</b></p>
+          <p><%= @hotel.properties_address.state %></p>
+        </div>
+        <div class="col">
+          <p><b>Country</b></p>
+          <p><%= @hotel.properties_address.country %></p>
+        </div>
+
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="hotel-buttons">
+
+      <div class="row">
+
+        <div class="col">
+          <td><%= link_to "Edit Hotel", edit_properties_hotel_path(@hotel.id), :class  => "btn btn-secondary"%></td>
+        </div>
+        <div class="col">
+          <td><%= link_to "Delete Hotel", properties_hotel_path(@hotel.id), method: :delete, :class  => "btn btn-danger" %></td>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

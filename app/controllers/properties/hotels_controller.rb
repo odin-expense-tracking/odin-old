@@ -3,13 +3,15 @@ class Properties::HotelsController < ApplicationController
 
   def index
 
-      @hotels = Properties::Hotel.where(:users_id => current_user.id)
+    user = User.find(current_user.id)
+    @hotels = user.properties_hotels.all
 
   end
 
   def new
 
-    @hotel = Properties::Hotel.new
+    user = User.find(current_user.id)
+    @hotel = user.properties_hotels.build
     @hotel.build_properties_address
 
   end
@@ -17,8 +19,9 @@ class Properties::HotelsController < ApplicationController
 
   def create
 
-    @hotel = Properties::Hotel.new(hotel_property_params)
-    @hotel.users_id = current_user.id
+    user = User.find(current_user.id)
+    @hotel = user.properties_hotels.new(hotel_property_params)
+    @hotel.user_id = current_user.id
 
     if @hotel.save
       flash[:notice] = 'Property created!'
@@ -32,20 +35,22 @@ class Properties::HotelsController < ApplicationController
 
   def show
 
-    @hotel = Properties::Hotel.find(params[:id])
+    user = User.find(current_user.id)
+    @hotel = user.properties_hotels.find(params[:id])
 
   end
 
   def edit
 
-    @hotel = Properties::Hotel.find(params[:id])
-    puts @hotel.attributes
+    user = User.find(current_user.id)
+    @hotel = user.properties_hotels.find(params[:id])
 
   end
 
   def update
 
-    @hotel = Properties::Hotel.find(params[:id])
+    user = User.find(current_user.id)
+    @hotel = user.properties_hotels.find(params[:id])
     if @hotel.update_attributes(hotel_property_params)
       flash[:notice] = 'Property updated!'
       redirect_to @hotel
@@ -58,7 +63,8 @@ class Properties::HotelsController < ApplicationController
   end
 
   def destroy
-    @hotel = Properties::Hotel.find(params[:id])
+    user = User.find(current_user.id)
+    @hotel = user.properties_hotels.find(params[:id])
     if @hotel.delete
       flash[:notice] = 'Property deleted!'
       redirect_to properties_hotels_path

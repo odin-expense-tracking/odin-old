@@ -106,10 +106,10 @@ ActiveRecord::Schema.define(version: 2019_07_07_150953) do
     t.string "phone", limit: 20
     t.string "email", limit: 70
     t.integer "rooms", null: false
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_properties_hotels_on_users_id"
+    t.index ["user_id"], name: "index_properties_hotels_on_user_id"
   end
 
   create_table "properties_hotels_daily_stats", force: :cascade do |t|

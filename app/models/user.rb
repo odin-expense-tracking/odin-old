@@ -46,5 +46,6 @@ class User < ApplicationRecord
 
   has_person_name
   has_many :services
+  has_many :properties_hotels, :class_name => 'Properties::Hotel'
 
 end

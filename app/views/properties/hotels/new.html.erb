@@ -1,0 +1,14 @@
+<%= content_for :title, 'Home' %>
+
+<div class="content">
+
+  <div class="container">
+
+    <%= link_to "VIEW ALL PROPERTIES", properties_hotels_path, :class => "btn btn-primary" %>
+
+    <h3>Add new property.</h3>
+
+    <%= render 'properties/hotels/form' %>
+
+  </div>
+</div>

@@ -1,0 +1,23 @@
+
+<div class="content">
+  <div class="container-fluid">
+    <%= link_to "ADD NEW HOTEL PROPERTY", properties_hotels_new_path, :class => "btn btn-primary" %>
+
+    <table style="width:100%">
+      <tr>
+        <th>Property Name</th>
+        <th>View</th>
+        <th>Delete</th>
+      </tr>
+
+      <% @hotels.each do |hotel| %>
+      <tr>
+        <td><%= hotel.name %></td>
+        <td><%= link_to "View Hotel", properties_hotel_path(hotel), :class  => "btn btn-secondary"%></td>
+        <td><%= link_to "Delete Hotel", properties_hotel_path(hotel), method: :delete, :class  => "btn btn-danger" %></td>
+      </tr>
+      <% end %>
+
+    </table>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<%= content_for :title, 'Home' %>
+
+<div class="content">
+
+  <%= link_to "View Hotel", properties_hotel_path(@hotel), :class  => "btn btn-secondary"%>
+
+
+  <div class="container">
+    <h3>Edit property.</h3>
+
+    <%= render 'properties/hotels/form' %>
+
+
+  </div>
+</div>

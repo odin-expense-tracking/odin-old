@@ -1,0 +1,52 @@
+<%= form_for @hotel do |f| %>
+  <% if @hotel.errors.any? %>
+    <ul>
+      <% @hotel.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.phone_field :phone %>
+  </p>
+  <p>
+    <%= f.label :rooms %><br />
+    <%= f.number_field :rooms %>
+  </p>
+  <%= f.fields_for :properties_address do |a| %>
+    <p>
+      <%= a.label :street_1 %><br />
+      <%= a.text_field :street_1 %>
+    </p>
+    <p>
+      <%= a.label :street_2 %><br />
+      <%= a.text_field :street_2 %>
+    </p>
+    <p>
+      <%= a.label :city %><br />
+      <%= a.text_field :city %>
+    </p>
+    <p>
+      <%= a.label :state %><br />
+      <%= a.text_field :state %>
+    </p>
+    <p>
+      <%= a.label :zipcode %><br />
+      <%= a.text_field :zipcode %>
+    </p>
+    <p>
+      <%= a.label :country %><br />
+      <%= a.text_field :country %>
+    </p>
+  <% end %>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

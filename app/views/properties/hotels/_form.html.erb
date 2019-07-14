@@ -1,4 +1,11 @@
 <%= form_for @hotel do |f| %>
+  <% if @hotel.errors.any? %>
+    <ul>
+      <% @hotel.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>

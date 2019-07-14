@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
     authenticated :user do
       # Add your authenticated route alternates here
-      # root to: 'controller#action', as: 'logged_in_root'
+      root to: 'properties/hotels#index', as: 'logged_in_root'
       namespace :properties do
 
         resources :hotels
